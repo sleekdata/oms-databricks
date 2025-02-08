@@ -18,8 +18,8 @@ df = spark.readStream \
 # Transform the data as needed
 transformed_df = df \
     .withColumn("process_id", lit("de_nb_102")) \
-    .withColumn("bronze_load_ts", current_timestamp())
-
+    .withColumn("bronze_load_ts", current_timestamp())  \
+    .withColumnRenamed("content", "order_json")
 
 # Write the transformed data to a Delta table
 transformed_df.writeStream \
