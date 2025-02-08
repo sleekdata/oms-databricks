@@ -17,7 +17,6 @@ schema = StructType([
 # Use Auto Loader to read the binary files in a streaming fashion from the external location
 df = spark.readStream \
     .format("binaryFile") \
-    .option("maxBytesPerTrigger", 10 * 512000) \
     .schema(schema) \
     .load(f"{external_location_name}/current")
 
@@ -36,7 +35,7 @@ transformed_df.writeStream \
     .format("delta") \
     .outputMode("append") \
     .option("checkpointLocation", checkpoint_location) \
-    .table("oms_analytics.01_bronze.orders")
+    .table("oms_analytics.bronze.orders")
 
 # Start the streaming process and await termination
 spark.streams.awaitAnyTermination()
