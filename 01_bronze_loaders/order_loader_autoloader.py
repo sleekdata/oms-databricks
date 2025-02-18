@@ -1,5 +1,6 @@
 # Databricks notebook source
-from pyspark.sql.functions import current_timestamp, lit, col
+# Imports
+from pyspark.sql import functions as F
 
 # Define the external location for Azure Data Lake Storage
 external_location_name = "abfss://orders@omslanding.dfs.core.windows.net"
@@ -17,8 +18,8 @@ df = spark.readStream \
 
 # Transform the data as needed
 transformed_df = df \
-    .withColumn("process_id", lit("de_nb_102")) \
-    .withColumn("bronze_load_ts", current_timestamp())  \
+    .withColumn("process_id", F.lit("de_nb_102")) \
+    .withColumn("bronze_load_ts", F.current_timestamp())  \
     .withColumnRenamed("content", "order_json")
 
 # Write the transformed data to a Delta table

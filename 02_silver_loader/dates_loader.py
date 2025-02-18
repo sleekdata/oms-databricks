@@ -1,4 +1,5 @@
 # Databricks notebook source
+# Imports
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import (
     col, lit, to_date, date_format, dayofweek, month, year, quarter, when, current_timestamp
@@ -31,8 +32,8 @@ dates_transformed_df = dates_df \
     .withColumn("process_id", lit("de_nb_102")) \
     .withColumn("silver_load_ts", current_timestamp())
 
-# Write the transformed data to the Delta table in oms_analytics.02_silver
-dates_transformed_df.write.format("delta").mode("overwrite").saveAsTable("oms_analytics.02_silver.dates")
+# Write the transformed data to the Delta table in oms_analytics.silver
+dates_transformed_df.write.format("delta").mode("overwrite").saveAsTable("oms_analytics.silver.dates")
 
 # Print end message with actual timestamp
 print(f"Date Dimension Load Process completed at: {datetime.now()}")

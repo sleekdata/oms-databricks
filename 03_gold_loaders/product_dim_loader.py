@@ -6,9 +6,9 @@ from pyspark.sql.functions import current_timestamp, lit
 print(f"Product Gold Load Process started at: {datetime.now()}")
 
 # Read data from the Silver tables
-product_df = spark.read.table("oms_analytics.02_silver.product")
-product_category_df = spark.read.table("oms_analytics.02_silver.product_category")
-product_subcategory_df = spark.read.table("oms_analytics.02_silver.product_subcategory")
+product_df = spark.read.table("oms_analytics.silver.product")
+product_category_df = spark.read.table("oms_analytics.silver.product_category")
+product_subcategory_df = spark.read.table("oms_analytics.silver.product_subcategory")
 
 # Join the Silver tables
 # Join product with product_subcategory on subcategory_id
@@ -42,7 +42,7 @@ columns_to_select = [
 product_gold_df = product_gold_df.select(*columns_to_select)
 
 # Write to the Gold table
-product_gold_df.write.format("delta").mode("overwrite").saveAsTable("oms_analytics.03_gold.product_dim")
+product_gold_df.write.format("delta").mode("overwrite").saveAsTable("oms_analytics.gold.product_dim")
 
 # Print end message with actual timestamp
 print(f"Product Gold Load Process completed at: {datetime.now()}")

@@ -6,7 +6,7 @@ from pyspark.sql.functions import current_timestamp, lit
 print(f"Customer Gold Load Process started at: {datetime.now()}")
 
 # Read data from the Silver table
-customer_silver_df = spark.read.table("oms_analytics.02_silver.customers")
+customer_silver_df = spark.read.table("oms_analytics.silver.customers")
 
 # Transformations for Gold
 customer_gold_df = customer_silver_df \
@@ -30,8 +30,8 @@ columns_to_select = [
 # Final DataFrame selection
 customer_gold_df = customer_gold_df.select(*columns_to_select)
 
-# Write transformed data to the Delta table in oms_analytics.03_gold
-customer_gold_df.write.format("delta").mode("overwrite").saveAsTable("oms_analytics.03_gold.customer_dim")
+# Write transformed data to the Delta table in oms_analytics.gold
+customer_gold_df.write.format("delta").mode("overwrite").saveAsTable("oms_analytics.gold.customer_dim")
 
 # Print end message with actual timestamp
 print(f"Customer Gold Load Process completed at: {datetime.now()}")
