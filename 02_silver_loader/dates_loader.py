@@ -1,8 +1,7 @@
 # Databricks notebook source
-# Imports
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import (
-    col, lit, to_date, date_format, dayofweek, month, year, quarter, when, current_timestamp
+    col, lit, to_date, date_format, dayofweek, month, year, quarter, when, current_timestamp, concat, lpad
 )
 from pyspark.sql.types import IntegerType
 from datetime import datetime, timedelta
@@ -25,9 +24,9 @@ dates_transformed_df = dates_df \
     .withColumn("date_id", date_format(col("date"), "yyyyMMdd").cast(IntegerType())) \
     .withColumn("date", to_date(col("date"), "yyyy-MM-dd")) \
     .withColumn("day_of_week", dayofweek(col("date"))) \
-    .withColumn("month", month(col("date"))) \
+    .withColumn("month", date_format(col("date"), "MMM")) \  # Converts to JAN, FEB, etc.
     .withColumn("year", year(col("date"))) \
-    .withColumn("quarter", quarter(col("date"))) \
+    .withColumn("quarter", concat(lpad(quarter(col("date")).cast("string"), 2, "0"), lit("-"), col("year"))) \
     .withColumn("is_weekend", when(col("day_of_week").isin(1, 7), lit(1)).otherwise(lit(0))) \
     .withColumn("process_id", lit("de_nb_102")) \
     .withColumn("silver_load_ts", current_timestamp())

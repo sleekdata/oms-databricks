@@ -1,0 +1,11 @@
+employee_id,name,age,salary,department,join_date,branch,gender
+1,John Doe,30,50000,HR,2020-01-15,A,M
+2,Jane Smith,25,62000,Engineering,2019-05-20,A,F
+3,Alice Brown,35,55000,Finance,2018-11-10,A,F
+4,Robert White,40,95000,Engineering,2017-03-22,A,M
+5,Laura Green,28,48000,HR,2021-07-30,A,F
+6,Michael Blue,33,74000,Finance,2019-09-12,A,M
+7,David Black,45,100000,Engineering,2016-08-14,A,M
+8,Sarah Yellow,29,52000,HR,2020-12-01,A,F
+9,Peter Pink,38,60000,Finance,2018-04-18,A,M
+10,Emily Gray,31,65000,Engineering,2019-11-25,A,F

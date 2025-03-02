@@ -51,7 +51,7 @@ order_items_silver_df = orders_with_items_df \
     )
 
 # Define the external location for Azure Data Lake Storage
-external_location_name = "abfss://orders@omslanding.dfs.core.windows.net"
+external_location_name = "abfss://orders@omslandingzone.dfs.core.windows.net"
 
 # Define the checkpoint locations
 checkpoint_location_orders = f"{external_location_name}/checkpoints/silver_loader/orders"

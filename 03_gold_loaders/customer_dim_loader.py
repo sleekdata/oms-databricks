@@ -12,7 +12,6 @@ customer_silver_df = spark.read.table("oms_analytics.silver.customers")
 customer_gold_df = customer_silver_df \
     .withColumnRenamed("customer_name", "name") \
     .withColumnRenamed("customer_email", "email") \
-    .withColumnRenamed("customer_mobile", "mobile") \
     .withColumnRenamed("silver_load_ts", "gold_load_ts") \
     .withColumn("process_id", lit("de_nb_102")) \
     .withColumn("gold_load_ts", current_timestamp())  # Set current timestamp for the gold_load_ts
@@ -22,7 +21,6 @@ columns_to_select = [
     "customer_id",
     "name",
     "email",
-    "mobile",
     "process_id",
     "gold_load_ts"
 ]

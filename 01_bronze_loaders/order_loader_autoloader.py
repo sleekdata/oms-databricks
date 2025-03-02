@@ -3,7 +3,7 @@
 from pyspark.sql import functions as F
 
 # Define the external location for Azure Data Lake Storage
-external_location_name = "abfss://orders@omslanding.dfs.core.windows.net"
+external_location_name = "abfss://orders@omslandingzone.dfs.core.windows.net"
 
 # Define the checkpoint location
 checkpoint_location = f"{external_location_name}/checkpoints/bronze_loader/orders"

@@ -12,7 +12,7 @@ product_subcategory_df = spark.read.table("oms_analytics.silver.product_subcateg
 
 # Join the Silver tables
 # Join product with product_subcategory on subcategory_id
-product_with_subcategory_df = product_df.join(product_subcategory_df, on="subcategory_id", how="inner")
+product_with_subcategory_df = product_df.join(product_subcategory_df, on="product_subcat_id", how="inner")
 
 # Join the result with product_category on category_id
 product_gold_df = product_with_subcategory_df.join(product_category_df, on="category_id", how="inner")
@@ -29,7 +29,7 @@ product_gold_df = product_gold_df \
 columns_to_select = [
     "product_id",
     "product_name",
-    "subcategory_id",
+    "product_subcat_id",
     "subcategory_name",
     "category_id",
     "category_name",

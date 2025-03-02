@@ -1,0 +1,25 @@
+employee_id,role,start_date,end_date
+11,Data Engineer,2024-02-02,2999-12-31
+11,Business Analyst,2023-02-02,2024-02-01
+11,System Architect,2022-02-02,2023-02-01
+11,Senior Software Engineer,2021-02-02,2022-02-01
+12,Business Analyst,2024-02-02,2999-12-31
+12,QA Engineer,2023-02-02,2024-02-01
+13,IT Support Specialist,2024-02-02,2999-12-31
+14,Data Scientist,2024-02-02,2999-12-31
+14,Business Analyst,2023-02-02,2024-02-01
+14,Business Analyst,2022-02-02,2023-02-01
+14,QA Engineer,2021-02-02,2022-02-01
+15,Software Engineer,2024-02-02,2025-01-31
+15,Software Engineer,2023-02-02,2024-02-01
+15,Data Engineer,2022-02-02,2023-02-01
+15,Senior Software Engineer,2021-02-02,2022-02-01
+16,Product Manager,2024-02-02,2999-12-31
+17,Software Engineer,2024-02-02,2999-12-31
+17,Project Manager,2023-02-02,2024-02-01
+17,Product Manager,2022-02-02,2023-02-01
+18,System Architect,2024-02-02,2999-12-31
+18,System Architect,2023-02-02,2024-02-01
+18,Business Analyst,2022-02-02,2023-02-01
+19,System Architect,2024-02-02,2999-12-31
+20,Project Manager,2024-02-02,2999-12-31
