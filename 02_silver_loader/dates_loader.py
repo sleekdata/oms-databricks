@@ -26,6 +26,7 @@ dates_transformed_df = dates_df \
     .withColumn("day_of_week", dayofweek(col("date"))) \
     .withColumn("month", date_format(col("date"), "MM")) \
     .withColumn("year", year(col("date"))) \
+    .withColumn("yyyy_mm", date_format(col("date"), "yyyy-MM")) \
     .withColumn("quarter", quarter(col("date"))) \
     .withColumn("is_weekend", when(col("day_of_week").isin(1, 7), lit(1)).otherwise(lit(0))) \
     .withColumn("process_id", lit("de_nb_102")) \
