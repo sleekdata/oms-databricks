@@ -1,0 +1,11 @@
+customer_id,first_name,last_name,email,join_date,age,gender,card_tier,income_range,credit_score,is_active
+C1001,John,Smith,john.smith@email.com,2021-03-15,35,Male,Gold,"50,000-75,000",720,1
+C1002,Sarah,Johnson,sarah.j@email.com,2020-11-22,28,Female,Platinum,"75,000-100,000",780,1
+C1003,Emily,Williams,emily.w@email.com,2019-07-10,42,Female,Silver,"25,000-50,000",650,0
+C1004,Michael,Brown,michael.b@email.com,2022-01-05,31,Male,Gold,"50,000-75,000",,1
+C1005,David,Davis,david.d@email.com,2021-09-18,,Male,Platinum,"100,000+",810,0
+C1006,Jessica,Miller,jessica.m@email.com,2022-05-30,29,Female,Gold,,690,1
+C1007,Daniel,Wilson,daniel.w@email.com,2020-08-12,45,Male,Silver,"25,000-50,000",600,0
+C1008,Olivia,Moore,olivia.m@email.com,2021-12-25,33,Female,Platinum,"75,000-100,000",750,1
+C1009,James,Taylor,james.t@email.com,2022-03-08,27,Male,Gold,"50,000-75,000",710,1
+C1010,Sophia,Anderson,sophia.a@email.com,2021-06-17,38,Female,Silver,"25,000-50,000",680,0
